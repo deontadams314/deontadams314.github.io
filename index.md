@@ -1,5 +1,7 @@
-Here you can say lots of fun things about your site.
+Welcome to unknown-networks!
 
-Maybe say a some things about yourself.
+This blog was created because I need a spot where I can make tech related posts to teach others.
 
-Or maybe what you plan to blog about.
+I will be mainly discusing networkeng, cloud, code (python) & security related topics.
+
+Feel free to reach via social media and I hope you enjoy the content!
