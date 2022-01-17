@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Blog Archive
+title: The Vault
 ---
 
 {% for tag in site.tags %}
