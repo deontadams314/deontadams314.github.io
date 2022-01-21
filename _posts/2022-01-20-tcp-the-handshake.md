@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 # **TCP - The Handshake**
 
@@ -24,5 +24,3 @@ You must crawl before you walk! Lets start with the basics and review everyone's
 - The side that sends the first FIN performs and _active close_. The side that receives that FIN performs a _passive close_.
 
 ![FIN.png]({{site.baseurl}}/_posts/FIN.png)
-
-
