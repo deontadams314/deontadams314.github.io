@@ -13,7 +13,7 @@ You must crawl before you walk! Lets start with the basics and review everyone's
 - The client will acknowledge the server's SYN with an ACK segment - again this will be equal to the clients SYN ISN plus one.
 - The side that sends the first SYN is known to perform an _active open_. The receiver of the SYN that sends the next SYN performs a _passive open_.
 
-![tcp.png]({{site.baseurl}}/images/tcp.png)
+![tcp.png]({{site.baseurl}}assets/images/tcp.png)
 
 
 ## How Is A Connection Terminated?
@@ -23,4 +23,4 @@ You must crawl before you walk! Lets start with the basics and review everyone's
 - A FIN will be sent by the side that wants to close their side of the session. This FIN will contain a sequence number of the current session. The receiver of this FIN will respond with an ACK of the sequence number plus one. A FIN consumes a sequence number just like SYN. At this point the other side will send a FIN segment to which the receiver must ACK to close the session on both ends.
 - The side that sends the first FIN performs and _active close_. The side that receives that FIN performs a _passive close_.
 
-![FIN.png]({{site.baseurl}}/images/FIN.png)
+![FIN.png]({{site.baseurl}}assets/images/FIN.png)
