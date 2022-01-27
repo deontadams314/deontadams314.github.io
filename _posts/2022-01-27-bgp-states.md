@@ -3,6 +3,8 @@ published: true
 ---
 # **BGP States**
 
+## INTRO
+
 - A BGP speaker has various states that it goes through before a neighbor adjacency is fully made. A finite state mechanism (FSM) is used to manage the states of each BGP peer during this process. FSM is a set of limited states that a BGP speaker is allowed to exist in during this process. BGP uses TCP for its connections so speakers listen on port 179.
 
 - The first 3 states deal with the TCP side of the connection:
