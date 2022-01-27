@@ -20,7 +20,7 @@ published: true
 
 ## CONNECT
 
-- In the CONNECT state the BGP speaker simply waiting for the TCP connection to be completed.
+- In the CONNECT state the BGP speaker is simply waiting for the TCP connection to be completed.
 - If the TCP connection is succesfull the speaker transitions into the OPENSENT state, where the OPEN message is sent.
 - If the TCP connection fails it will instead move into the ACTIVE state.
 - If the ConnectRetry timer expires the connection will remain in the CONNECT state.
@@ -51,5 +51,6 @@ published: true
 
 ## ESTABLISHED
 
-- In the ESTABLISHED state is the final stage in the BGP process. At this point BGP update messages are shared between speakers.
+- In the ESTABLISHED state is the final stage in the BGP process. At this point BGP update messages are shared between speakers as well as KEEPALIVES. 
+- The KEEPALIVE messages essentially check if a speaker is there and will reset the hold timer. If the hold timer expires the peer is considered dead and the state is moved back to IDLE.
 - Any error or NOTIFICATION message will result in the speaker moving back into the IDLE state.
