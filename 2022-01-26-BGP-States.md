@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 # **BGP States**
 
@@ -51,10 +51,3 @@ published: false
 
 - In the ESTABLISHED state is the final stage in the BGP process. At this point BGP update messages are shared between speakers.
 - Any error or NOTIFICATION message will result in the speaker moving back into the IDLE state.
-
-
-
-
-
-
-
