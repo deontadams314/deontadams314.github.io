@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 # **TCP - Half-Close & Half-Open**
 
