@@ -36,11 +36,11 @@ published: true
 
 - In the OPENSENT state is where the OPEN message will be sent and the speaker is also waiting to receive an OPEN message from its peer.
 - The OPEN message is used to establish BGP peering connections and contains the following parameters
-		- BGP Version: The version of BGP used by the speaker
-		- AS #: Autonomous System # of the BGP speaker
-		- Hold Timer: The max time that can pass before a peer is declared dead. Once a keep alive 			 is received if a response exceeds the hold timer the peer is considered dead. The lower     	   of the two BGP speakers hold timers is used. 3 sec is the default.
-		- BGP ID - Identifier of the BGP speaker
-        - Optional - optional BGP parameters
+	- BGP Version: The version of BGP used by the speaker
+    - AS #: Autonomous System # of the BGP speaker
+	- Hold Timer: The max time that can pass before a peer is declared dead. Once a keep alive 			 is received if a response exceeds the hold timer the peer is considered dead. The lower     	   of the two BGP speakers hold timers is used. 3 sec is the default.
+	- BGP ID - Identifier of the BGP speaker
+    - Optional - optional BGP parameters
 - If the OPEN message contains no errors a KEEPALIVE message is sent and the speaker transitions into the OPENCONFIRM state.
 - If the OPEN message has errors the state moves back to IDLE.
 
