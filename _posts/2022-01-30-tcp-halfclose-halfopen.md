@@ -1,7 +1,7 @@
 ---
 published: true
 ---
-# **TCP - Half-Close & Half-Open**
+# **TCP - Half-Close and Half-Open**
 
 Half-close and Half-open, what is this? And no these are not sequels in the Half-Life series =) - but rather TCP features that can occur due to its Full-Duplex nature. Here I will give you a few details about these two features so you can know the difference.
 
