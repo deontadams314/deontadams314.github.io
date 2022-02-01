@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 # **BGP Path Attributes**
 
@@ -77,5 +77,3 @@ BGP uses a series of path attributes to make its routing decisions. This can aff
 - This is a Cisco specific attribute that only exists on the local router. This is not shared with any other router.
 - The weight can be assigned to a route the higher the weight the more preffered the route. Weight is considered above all attributes on Cisco devices.
 - A number between 0-65,535 can be used for Weight.
-
-
