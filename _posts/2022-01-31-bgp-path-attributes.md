@@ -29,7 +29,6 @@ BGP uses a series of path attributes to make its routing decisions. This can aff
 	- IBGP_2: If the advertising peer are IBGP neighbors and the prefix was learned from another AS, the NEXT_HOP will be the ip address of external peer where the prefix was learned.
 - This is a well-known mandatory attribute.
 
-
 ## LOCAL_PREF
 
 - LOCAL_PREF is an attribute that is only shared with iBGP neighbors not eBGP neighbors. The LOCAL_PREF does not leave the AS. A route will share the LOCAL_PREF to iBGP neighbors to dictate where traffic will be preffered. 
@@ -61,7 +60,6 @@ BGP uses a series of path attributes to make its routing decisions. This can aff
 	- No-Advertise: Routes cannot be advertised at all.
 	- No-Export: Routes receiving this value cannot be advertised to eBGP peers.
 	- Local-AS: Routes with this cannot be advertised to eBGP peers and stay within the AS.
-
 - This is an optional transitive attribute
 
 ## ORIGINATOR_ID
@@ -78,20 +76,6 @@ BGP uses a series of path attributes to make its routing decisions. This can aff
 
 - This is a Cisco specific attribute that only exists on the local router. This is not shared with any other router.
 - The weight can be assigned to a route the higher the weight the more preffered the route. Weight is considered above all attributes on Cisco devices.
-- A number between 0-65,535
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- A number between 0-65,535 can be used for Weight.
 
 
