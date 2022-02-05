@@ -1,7 +1,7 @@
 ---
 published: true
 ---
-# **Route Reflectors & Confederations**
+# **Route Reflectors And Confederations**
 
 Today we will be discussing two different set of BGP related tools you can use to help scale and maintain a large BGP implementation. One is called Route Reflectors and the other is called Confederations. While these two names do sound like something out of Star Trek, please do not be afraid of them. They can make your large BGP setups become stress free (assuming you use them right :P). Lets take a dive!
 
@@ -13,7 +13,7 @@ Today we will be discussing two different set of BGP related tools you can use t
   - If the route is learned from a non-client iBGP it is reflected to clients only
   - If the route was learned from a client, it is reflected to all non-clients and clients (except for the originating client)
   - If the route was learned from an eBGP - it is reflected to all clients and non-clients
-
+  
 - Due to the iBGP rule where internal neighbors cannot advertise routes learned from on internal router to another, route reflectors need a method in order to prevent 
 routing loops. In order to do that RR's make use of two BGP path attributes: ORIGINATOR_ID & CLUSTER_LIST.
 
@@ -24,7 +24,9 @@ routing loops. In order to do that RR's make use of two BGP path attributes: ORI
 ## Confederations
 
 - Confederations can help segment your AS into smaller sections. A confederation allows you to have sub-autonomous systems known as "member autonomous systems". A confederation receives an identifer called a confederation ID. This is what is actually spread to external AS systems - not the internal sub member AS numbers.
+
 - There are two AS_PATH attributes added to confederations. They are called AS_CONFED_SEQUENCE and AS_CONFED_SET.
     - AS_CONFED_SEQUENCE - Contains an ordered list of AS numbers along the path to the destination. These would be the internal sub member AS numbers.
     - AS_CONFED_SET - Contains an unordered list of AS numbers along the path to the destination. These would be the internal sub member AS numbers.
+
 - From the view of external numbers a confederation is just one AS system. They do not see the internal AS numbers of the confederationl. eBGP routes external to the confederation are preffered over eBGP routes to member AS systems, which is preffered over iBGP routes.
