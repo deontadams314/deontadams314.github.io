@@ -10,6 +10,7 @@ Today we will be discussing two different set of BGP related tools you can use t
 - To understand Route Reflectors you must understand the problem they attempt to alleviate. In iBGP peers must exist in a fully meshed topology to insure no routing loops. Imagine an iBGP setup where you have 50+ routers in a full mesh - it would be a very tough situation to manage! With route reflectors you can have one router configured as a route reflector (RR) and other iBGP peers called clients. 
 
 - A router reflector and it's clients are known as a cluster. The RR can learn routes from its clients and advertise them to clients and non-clients. The clients can peer with other external neighbors or clients in the cluster. The RR can peer with both internal and external neighbors outside of the cluster. An AS can have multiple clusters and there also can be multiple RR for redundancy in the setup. Route Reflectors follow three rules to determine who the route is advertised to:
+
   - If the route is learned from a non-client iBGP it is reflected to clients only
   - If the route was learned from a client, it is reflected to all non-clients and clients (except for the originating client)
   - If the route was learned from an eBGP - it is reflected to all clients and non-clients
