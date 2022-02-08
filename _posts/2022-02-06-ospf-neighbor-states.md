@@ -23,7 +23,7 @@ OSPF is a rather complex routing protocol in the network world. Known as a link 
 
 - OSPF routers only form full adjacencies with the Designated Router (DR) and Backup Designated Router (BDR) in broadcast and  NBMA networks. The router will stay in the 2-Way state with all other neighbors.
 
-- In broadcast and NBMA networks the DR & BDR are elected at the ned of this state.
+- In broadcast and NBMA networks the DR & BDR are elected at the end of this state.
 
 ## ExStart
 
