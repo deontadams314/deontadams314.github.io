@@ -19,7 +19,7 @@ In today's article we will be discussing the Address Resolution Protocol, better
 
 ## Gratuitous Address Resolution Protocol
 
-- Gratuitous Address Resolution Protocol is used by a host to find it's own IP address on the network. Gratuitous ARP is essentially a method for duplicate IP detection. It is also a way to update hosts on the network with it's updated MAC-IP mapping. A host will send a GARP broadcast for it's own IP address. If a reply is found then there is a duplicate IP on the network. The source and destination IP address in the GARP broadcast will be the same since it is from the local host.
+- Gratuitous Address Resolution Protocol is used by a host to find it's own IP address on the network. Gratuitous ARP is essentially a method for duplicate IP detection. It is also a way to update hosts on the network with it's updated MAC-IP mapping. A host will send a broadcast message out with it's own IP as the soruce and destination. If an ARP reply is returned with it a source IP matching it's own, then there is a duplicate IP on the network. The source and destination IP address in the GARP broadcast will be the same since it is from the local host.
 
 ## Proxy Address Resolution Protocol
 
