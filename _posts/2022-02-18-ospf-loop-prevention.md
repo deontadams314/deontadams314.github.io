@@ -48,4 +48,23 @@ Recently I realized I had some questions on just how OSPF prevented loops. So as
 
 ![r2-database.png]({{site.baseurl}}/assets/images/r2-database.png)
 
-- To make R5 have a full adjacency to Area 0 you can use a virtual link to resolve the problem. A virtual link between R5 and R2 will allow R5 to connect with Area 0 and be viewed as a ABR.
+- To make R5 have a full adjacency to Area 0 you can create a virtual link to resolve the problem. A virtual link between R5 and R2 will allow R5 to connect with Area 0 and be viewed as a ABR. Here we will configure the virtual link between R5 & R2 using Area 1 as the transit area to the backbone.
+
+![r5-vlink.png]({{site.baseurl}}/assets/images/r5-vlink.png)
+
+![r2-vlink.png]({{site.baseurl}}/assets/images/r2-vlink.png)
+
+- With the virtual link now configured between R5 & R2 lets check the if R2 can see R5 as an ABR.
+
+![r2-br-vl.png]({{site.baseurl}}/assets/images/r2-br-vl.png)
+
+![r2-route-vl.png]({{site.baseurl}}/assets/images/r2-route-vl.png)
+
+- Wow would you look at that? R2 now considers the R5 and is using tha path through R5 to reach 66.66.66.66 instead of going through the backbone. R1 is also accepting the Type 3 LSAs from R5 as they are now being passed on by R2.
+
+![r1-dba.png]({{site.baseurl}}/assets/images/r1-dba.png)
+
+
+## What Did We Learn?
+
+- So we took a dive into OSPF loop prevention. We learned the purpose of the ABR and how it interacts with Type 3 LSA's coming from the non backbone areas. We also learned about virtual links and how to configure them. We saw that ABR routers will not pass on Type 3 LSA routes learned from non-backbone areas into the backbone. We gained a better understanding of how OSPF functions and the way the routers interact with each other based on the OSPF rules. Overall I felt this was a great lab and I encourage you to set up a topology like this to learn it yourself.
