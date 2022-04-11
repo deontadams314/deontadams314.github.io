@@ -49,7 +49,7 @@ Today we will take a look at Transport Layer Security better known as its acrony
 
     7. Encrypted Application Data: At this point the TLS handshake is completed and all application data is encrypted.
 
-            ![tls-enc.png]({{site.baseurl}}/assets/images/tls-enc.png)
+        ![tls-enc.png]({{site.baseurl}}/assets/images/tls-enc.png)
 
 ## TLS Secrets
 
