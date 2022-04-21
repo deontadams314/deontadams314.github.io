@@ -45,9 +45,26 @@ A Distributed Denial of Service (DDoS) attack is a malicious network attack whos
 - NTP Amplification
     - An attacker will exploit a public NTP server and overhelm a victim host with UDP traffic. The amplification is due the fact that a compromised NTP host can easily send a very high amount of UDP traffic resulting in a high bandwidth & high volume attack.
 
+- Smurf DDoS
+    - An attacker spoofs an IP address and sends an ICMP request to a victim. The victim will send a ICMP reply to which the attacker will echo the response back to the victim. This creates an infinite loop and eventually crashes the system.
+
 ## Mitigation Techniques
 
+There are many ways to mitigate a DDoS attack. Even more than listed here. I believe a good combination of a few in conjuction will help round out your networks defense to a DDoS attack.
+
 - Anycast Network
-- Network Monitoring
-- Multi Region Hosted
-- Utilize a DDoS software
+    - Anycast allows different servers to share the same IP address. BGP allows hosts to find the best route to the nearest anycast address. Anycast networks allows network traffic to be spread out. A DDoS attack would have to take down every server in the anycast network.
+- Firewall & Network Monitoring
+    - Configure firewall to protect against flood attacks. Monitor traffic so you can keep traffic of patterns and determine when an attack is possible.
+- Cloud Multi Region Hosted Application
+    - Have an application configured to work in different physical regions this way the blast radius would be large for a DDoS attack.
+- Utilize BGP with an ISP
+    - Work with an ISP to route traffic away when a DDoS attack is detected.
+- Upstream filtering
+    -  Cloudflare or Amazon Shield work by checking incoming packet IPs against known attackers and BotNets and attempt to only forward legitimate traffic.
+    - Stops the attack before it reaches your network.
+- CDN Network
+    - Avoids a single point of congestion by having multiple PoPs.
+    - Distributes content across the globe or regions.
+- Anti DDoS Systems
+    -  Arbor Networks, Akamai, CloudFlare, Radware
