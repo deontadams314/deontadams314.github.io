@@ -11,7 +11,7 @@ Address Resolution Protocol allows a host to find another host on a network. Bef
 
 ## What is ARP Spoofing?
 
-ARP Spoofing is a layer 2 Man In The Middle (MitM) Attack that takes advantage of the lack of security in the ARP protocol. In order for ARP Spoofing to work an attacker must already have access on the network. Once on the network the attacker would identify a host or hosts on the network and use a tool to forge ARP responses. These reponses would claim the attacks MAC address as the MAC address of the target host(s). Other devices on the network would have no way to verify this and simply update their ARP cache with the MAC address of the attacker. At this point the attacker may inspect the packets being sent while forwarding to the actual destination to avoid detection. They may even steal information from the packets that have recieved or modify the data.
+ARP Spoofing is a layer 2 Man In The Middle (MitM) Attack that takes advantage of the lack of security in the ARP protocol. In order for ARP Spoofing to work an attacker must already have access on the network. Once on the network the attacker would identify a host or hosts on the network and use a tool to forge ARP responses. These reponses would claim the attackers MAC address as the MAC address of the target host(s). Other devices on the network would have no way to verify this and simply update their ARP cache with the MAC address of the attacker. At this point the attacker may inspect the packets being sent while forwarding to the actual destination to avoid detection. They may even steal information from the packets that have recieved or modify the data.
 
 ## How can I detect an ARP Spoofing attack?
 
