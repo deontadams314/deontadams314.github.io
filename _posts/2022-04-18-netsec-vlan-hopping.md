@@ -20,7 +20,7 @@ Double Tagging is where an attacker uses 802.1Q tagging in order to attack a VLA
 ## Mitigation Techniques
 
 Switch Spoofing
-    - Switch ports should never be configured as dynamic switch ports.
+- Switch ports should never be configured as dynamic switch ports.
     - Instead configure trunk ports with the "nonegotiate" option.   
     - Ensure any port not meant to be a trunk port is configured as an access port.
 
