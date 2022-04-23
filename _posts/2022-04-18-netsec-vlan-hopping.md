@@ -21,12 +21,12 @@ Double Tagging is where an attacker uses 802.1Q tagging in order to attack a VLA
 
 Switch Spoofing
 - Switch ports should never be configured as dynamic switch ports.
-    - Instead configure trunk ports with the "nonegotiate" option.   
-    - Ensure any port not meant to be a trunk port is configured as an access port.
+- Instead configure trunk ports with the "nonegotiate" option.   
+- Ensure any port not meant to be a trunk port is configured as an access port.
 
 Double Tagging
-    - Do not put any host onto VLAN 1 (the default native VLAN).
-    - Change the native VLAN on any trunk port to an unused VLAN on the network.
+- Do not put any host onto VLAN 1 (the default native VLAN).
+- Change the native VLAN on any trunk port to an unused VLAN on the network.
 
 ## How do hackers perform this attack?
 
