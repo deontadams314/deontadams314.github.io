@@ -20,10 +20,14 @@ A host can detect ARP Spoofing on an network by checking and verifying the ARP c
 ## Mitigation Techniques
 
 There are a few ways that a network admin can fight against ARP Spoofing
-    - Static ARP Entries: Use static ARP entries for critical hosts (DNS servers, routers, load balancers etc.). This however does not scale on a large network as the entries would need to be entered mantained on each host on the network.
-    - OS Security Settings: Each OS behaves differently and has built in defense settings that can be used to combat ARP Spoofing.
-    - ARP Detection & Prevention Software: 3rd party software can be put in place on host machines to detect ARP Spoofing
-    - Packet Filtering: Use packet filtering to verify if packets contain conflicting source information.
+- Static ARP Entries
+    - Use static ARP entries for critical hosts (DNS servers, routers, load balancers etc.). This however does not scale on a large network as the entries would need to be entered mantained on each host on the network.
+- OS Security Settings
+    - Each OS behaves differently and has built in defense settings that can be used to combat ARP Spoofing.
+- ARP Detection & Prevention Software 
+    - 3rd party software can be put in place on host machines to detect ARP Spoofing
+- Packet Filtering 
+    - Use packet filtering to verify if packets contain conflicting source information.
 
 ## How do hackers perform this attack?
 
