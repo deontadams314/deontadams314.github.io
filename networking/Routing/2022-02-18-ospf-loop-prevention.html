@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>OSPF Loop Prevention - unknown-networks</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+    <link rel="canonical" href="https://unknown-networks.com/networking/Routing/2022-02-18-ospf-loop-prevention.html" />
+  
+
+  <!-- Page author -->
+  
+    <meta name="author" content="dta314" />
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="../../css/colors.css">
+  <link rel="stylesheet" href="../../css/bundle.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo">
+        <img alt="KPN Logo" src="../../img/logo-kpn.svg" />
+      </a>
+      <div class="top-bar__title">unknown-networks</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">unknown-networks</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../welcome.html" class="side-bar__link ">
+    Welcome
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      Networking
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      General
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-02-15-all-about-arp.html" class="side-bar__link ">
+    All About ARP
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-02-26-planes-data-control-management.html" class="side-bar__link ">
+    Planes: Control, Data, Management
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-02-28-stp.html" class="side-bar__link ">
+    STP: Spanning Tree Protocol 8012.1D
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      Routing
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-01-27-bgp-states.html" class="side-bar__link ">
+    BGP States
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-01-31-bgp-path-attributes.html" class="side-bar__link ">
+    BGP Path Attributes
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-02-ibgp.html" class="side-bar__link ">
+    Internal BGP - iBGP
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-04-route-reflectors-confederations.html" class="side-bar__link ">
+    Route Reflectors And Confederations
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-06-ospf-neighbor-states.html" class="side-bar__link ">
+    OSPF Neighbor States
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-18-ospf-loop-prevention.html" class="side-bar__link side-bar__link--active">
+    OSPF Loop Prevention
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-24-bgp-nwlla-omni.html" class="side-bar__link ">
+    BGP - N WLLA OMNI
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-03-01-routing-loops-prev.html" class="side-bar__link ">
+    Split Horizon/Posion Reverse/Route Poisoning
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      TCP IP
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../TCP-IP/2022-01-20-tcp-the-handshake.html" class="side-bar__link ">
+    TCP - The Handshake
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../TCP-IP/2022-01-30-tcp-halfclose-halfopen.html" class="side-bar__link ">
+    TCP - Half-Close And Half-Open
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../TCP-IP/2022-02-07-tcp-window.html" class="side-bar__link ">
+    The TCP Window
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Security
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      General
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/General/2022-04-10-how-tls-works.html" class="side-bar__link ">
+    How TLS Works
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Network Security
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-18-netsec-vlan-hopping.html" class="side-bar__link ">
+    VLAN Hopping
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-19-netsec-arp-spoofing.html" class="side-bar__link ">
+    ARP Spoofing
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-20-netsec-ddos-attacks.html" class="side-bar__link ">
+    DDoS Attacks
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-25-netsec-dns-spoofing.html" class="side-bar__link ">
+    DNS Spoofing
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title">OSPF Loop Prevention</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#ospf-basics">OSPF Basics</a></li>
+                
+            
+                <li><a class="a" href="#ospf-backbone-area-area-border-routers">OSPF Backbone Area &amp; Area Border Routers</a></li>
+                
+            
+                <li><a class="a" href="#time-to-lab">Time To Lab</a></li>
+                
+            
+                <li><a class="a" href="#what-did-we-learn">What Did We Learn?</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="ospf-loop-prevention"><strong>OSPF Loop Prevention</strong><a class="headerlink" href="#ospf-loop-prevention" title="Permanent link">#</a></h1>
+<p>Recently I realized I had some questions on just how OSPF prevented loops. So as any curious mind would I did some research and decided to lab it up in GNS3. It was kind of difficult researching this topic online as there were very few examples online. Luckily I found a few and through some reading I was about to learn and expand my brain a bit. Before we can deep dive into how OSPF can prevent routing loops, we have to take a look at some OSPF basics. Specifically Area 0, OSPF LSA types and OSPF router roles such as the Area Border Router.</p>
+<h2 id="ospf-basics">OSPF Basics<a class="headerlink" href="#ospf-basics" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>OSPF is a link-state routing protocol that uses messages called Link State Advertisements (LSA) to share routing information. There are 11 different LSA packets but we will only be discussing the first three and how they work.</p>
+</li>
+<li>
+<p>LSA Type 1 - Router</p>
+<ul>
+<li>Sent between routers in a single area and does not leave the area of origin. Used to describe the cost of the link as well any neighboring routers on the link.</li>
+</ul>
+</li>
+<li>LSA Type 2 - Network<ul>
+<li>Originated by the Designated Router (DR) and like Type 1 LSAs are only flooded within a single area. Type 2 LSAs advertise information about all the connected routers (including the DR itself) in the network segment.</li>
+</ul>
+</li>
+<li>LSA Type 3 - Summary<ul>
+<li>Sent by the ABR to advertise the routes in another area. The ABR will send Type 3 LSAs to another area to describe the topology. The routers in the neighbor area will know to reach those routes via the ABR. The ABR also uses Type 3 LSAs to advertise destinations within its area to the backbone.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ospf-backbone-area-area-border-routers">OSPF Backbone Area &amp; Area Border Routers<a class="headerlink" href="#ospf-backbone-area-area-border-routers" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>The backbone area (Area 0) is required when multiple areas are included within an OSPF topology. In order for one area to reach another area the traffic must pass through the backbone area. ABRs will send Type 3 LSAs through the backbone area which will be forwarded to the next area. This is important and one way OSPF prevents routing loops. </p>
+</li>
+<li>
+<p>Area Border Routers act as the middle man between the backbone and other areas. To be considered an ABR an interface must exist in both Area 0 and another area. ABR's expect Type 3 LSAs only from Area 0. Any Type 3 LSA recieved from a non-backbone area will be ignored. However an ABR will accept Type 3 LSA's if a router has a partial adjacency to Area 0 (which we will be testing). This doesn't necessarily mean those routes will be used so keep that in mind.</p>
+</li>
+</ul>
+<h2 id="time-to-lab">Time To Lab<a class="headerlink" href="#time-to-lab" title="Permanent link">#</a></h2>
+<p><img alt="ospf-top-01.png" src="/assets/images/ospf-top-01.png" /></p>
+<ul>
+<li>Here is the topology we will be working with in GNS3. As you can see we have 3 areas - Area 0, 1 and 2. How many ABR's do you see here? 2 or 3? R2 and R3 are ABR's but R5 is not. Remember to be considered an ABR you must have an interface located in the backbone area and an interface in another area. Taking a look at the "show ospf border-routers" command on R4 it seems to only recognize R2 as an ABR in Area 1, not R5.</li>
+</ul>
+<p><img alt="abr-r4.png" src="/assets/images/abr-r4.png" /></p>
+<ul>
+<li>There is a route on R6 shared via OSPF for the address 66.66.66.66/32 sitting on router R6. The current path to this address is via R2, which makes sense because of the OSPF rule that traffic must pass through the backbone for inter-area traffic. </li>
+</ul>
+<p><img alt="r4-b4-trace.png" src="/assets/images/r4-b4-trace.png" /></p>
+<ul>
+<li>What if we wanted to use the path through R5 instead? How can we make that happen? We can place an interface on R5 into Area 0! This will provide R5 with a partial adjacency to Area 0 and R4 will then see R5 as an ABR. The route for 66.66.66.66 should route through R5 at that point. We will place a loopback address on R5 into Area 0 to make this happen.</li>
+</ul>
+<p><img alt="r5-abr.png" src="assets/images/r5-abr.png" /></p>
+<ul>
+<li>There now that R5 has a connection to Area 0 let's take a look at R4 and see if it will route through R5.</li>
+</ul>
+<p><img alt="r4-to-r5.png" src="/assets/images/r4-to-r5.png" /></p>
+<ul>
+<li>Nice! So it looks like a few things have occured on R4. It now views R5 as an ABR and was able to receive Type 3 LSA's from it. This caused the route to be added into the route table with a cost of 3 instead of 5! Finally the traceroute was performed and you can see it is now using the optimal path towards 66.66.66.66/32. But what about R2? R2 has a full adjacency with Area 0 and should have also received the Type 3 Summary LSA from R5. Will it now use the new path? if we take a look we can see it does not! ABR's only expect Type 3 LSA's from the backbone Area 0 and because R5 only has a partial adjacency to Area 0 it will not install that route into it's table and ignore it. Even though if we look at the OSPF database it has received the summary LSA from Area 1 it will only use the LSA from Area 0.</li>
+</ul>
+<p><img alt="r2-route.png" src="/assets/images/r2-route.png" /></p>
+<p><img alt="r2-database.png" src="/assets/images/r2-database.png" /></p>
+<ul>
+<li>To make R5 have a full adjacency to Area 0 you can create a virtual link to resolve the problem. A virtual link between R5 and R2 will allow R5 to connect with Area 0 and be viewed as a ABR. Here we will configure the virtual link between R5 &amp; R2 using Area 1 as the transit area to the backbone.</li>
+</ul>
+<p><img alt="r5-vlink.png" src="assets/images/r5-vlink.png" /></p>
+<p><img alt="r2-vlink.png" src="/assets/images/r2-vlink.png" /></p>
+<ul>
+<li>With the virtual link now configured between R5 &amp; R2 lets check the if R2 can see R5 as an ABR.</li>
+</ul>
+<p><img alt="r2-br-vl.png" src="/assets/images/r2-br-vl.png" /></p>
+<p><img alt="r2-route-vl.png" src="/assets/images/r2-route-vl.png" /></p>
+<ul>
+<li>Wow would you look at that? R2 now considers the R5 and is using tha path through R5 to reach 66.66.66.66 instead of going through the backbone. R1 is also accepting the Type 3 LSAs from R5 as they are now being passed on by R2.</li>
+</ul>
+<p><img alt="r1-dba.png" src="/assets/images/r1-dba.png" /></p>
+<h2 id="what-did-we-learn">What Did We Learn?<a class="headerlink" href="#what-did-we-learn" title="Permanent link">#</a></h2>
+<ul>
+<li>So we took a dive into OSPF loop prevention. We learned the purpose of the ABR and how it interacts with Type 3 LSA's coming from the non backbone areas. We also learned about virtual links and how to configure them. We saw that ABR routers will not pass on Type 3 LSA routes learned from non-backbone areas into the backbone. We gained a better understanding of how OSPF functions and the way the routers interact with each other based on the OSPF rules. Overall I felt this was a great lab and I encourage you to set up a topology like this to learn it yourself.</li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="2022-02-06-ospf-neighbor-states.html"
+                title="OSPF Neighbor States">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="2022-02-24-bgp-nwlla-omni.html"
+                title="BGP - N WLLA OMNI"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-02-23 21:14:46.536883+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    ../.. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../../js/highlight.min.js"></script>
+  <script src="../../js/languages/groovy.min.js"></script>
+  <script src="../../js/languages/asciidoc.min.js"></script>
+  <script src="../../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>

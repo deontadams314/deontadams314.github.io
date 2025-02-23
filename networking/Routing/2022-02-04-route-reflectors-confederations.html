@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>Route Reflectors And Confederations - unknown-networks</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+    <link rel="canonical" href="https://unknown-networks.com/networking/Routing/2022-02-04-route-reflectors-confederations.html" />
+  
+
+  <!-- Page author -->
+  
+    <meta name="author" content="dta314" />
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="../../css/colors.css">
+  <link rel="stylesheet" href="../../css/bundle.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo">
+        <img alt="KPN Logo" src="../../img/logo-kpn.svg" />
+      </a>
+      <div class="top-bar__title">unknown-networks</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">unknown-networks</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../welcome.html" class="side-bar__link ">
+    Welcome
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      Networking
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      General
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-02-15-all-about-arp.html" class="side-bar__link ">
+    All About ARP
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-02-26-planes-data-control-management.html" class="side-bar__link ">
+    Planes: Control, Data, Management
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-02-28-stp.html" class="side-bar__link ">
+    STP: Spanning Tree Protocol 8012.1D
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      Routing
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-01-27-bgp-states.html" class="side-bar__link ">
+    BGP States
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-01-31-bgp-path-attributes.html" class="side-bar__link ">
+    BGP Path Attributes
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-02-ibgp.html" class="side-bar__link ">
+    Internal BGP - iBGP
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-04-route-reflectors-confederations.html" class="side-bar__link side-bar__link--active">
+    Route Reflectors And Confederations
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-06-ospf-neighbor-states.html" class="side-bar__link ">
+    OSPF Neighbor States
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-18-ospf-loop-prevention.html" class="side-bar__link ">
+    OSPF Loop Prevention
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-24-bgp-nwlla-omni.html" class="side-bar__link ">
+    BGP - N WLLA OMNI
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-03-01-routing-loops-prev.html" class="side-bar__link ">
+    Split Horizon/Posion Reverse/Route Poisoning
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      TCP IP
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../TCP-IP/2022-01-20-tcp-the-handshake.html" class="side-bar__link ">
+    TCP - The Handshake
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../TCP-IP/2022-01-30-tcp-halfclose-halfopen.html" class="side-bar__link ">
+    TCP - Half-Close And Half-Open
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../TCP-IP/2022-02-07-tcp-window.html" class="side-bar__link ">
+    The TCP Window
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Security
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      General
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/General/2022-04-10-how-tls-works.html" class="side-bar__link ">
+    How TLS Works
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Network Security
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-18-netsec-vlan-hopping.html" class="side-bar__link ">
+    VLAN Hopping
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-19-netsec-arp-spoofing.html" class="side-bar__link ">
+    ARP Spoofing
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-20-netsec-ddos-attacks.html" class="side-bar__link ">
+    DDoS Attacks
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-25-netsec-dns-spoofing.html" class="side-bar__link ">
+    DNS Spoofing
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title">Route Reflectors And Confederations</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#route-reflectors">Route Reflectors</a></li>
+                
+            
+                <li><a class="a" href="#confederations">Confederations</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="route-reflectors-and-confederations"><strong>Route Reflectors And Confederations</strong><a class="headerlink" href="#route-reflectors-and-confederations" title="Permanent link">#</a></h1>
+<p>Today we will be discussing two different set of BGP related tools you can use to help scale and maintain a large BGP implementation. One is called Route Reflectors and the other is called Confederations. While these two names do sound like something out of Star Trek, please do not be afraid of them. They can make your large BGP setups become stress free (assuming you use them right :P). Lets take a dive!</p>
+<h2 id="route-reflectors">Route Reflectors<a class="headerlink" href="#route-reflectors" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>To understand Route Reflectors you must understand the problem they attempt to alleviate. In iBGP peers must exist in a fully meshed topology to insure no routing loops. Imagine an iBGP setup where you have 50+ routers in a full mesh - it would be a very tough situation to manage! With route reflectors you can have one router configured as a route reflector (RR) and other iBGP peers called clients. </p>
+</li>
+<li>
+<p>A router reflector and it's clients are known as a cluster. The RR can learn routes from its clients and advertise them to clients and non-clients. The clients can peer with other external neighbors or clients in the cluster. The RR can peer with both internal and external neighbors outside of the cluster. An AS can have multiple clusters and there also can be multiple RR for redundancy in the setup. Route Reflectors follow three rules to determine who the route is advertised to:</p>
+</li>
+<li>
+<p>If the route is learned from a non-client iBGP it is reflected to clients only</p>
+</li>
+<li>If the route was learned from a client, it is reflected to all non-clients and clients (except for the originating client)</li>
+<li>
+<p>If the route was learned from an eBGP - it is reflected to all clients and non-clients</p>
+</li>
+<li>
+<p>Due to the iBGP rule where internal neighbors cannot advertise routes learned from on internal router to another, route reflectors need a method in order to prevent 
+routing loops. In order to do that RR's make use of two BGP path attributes: ORIGINATOR_ID &amp; CLUSTER_LIST.</p>
+</li>
+<li>
+<p>The ORIGINATOR_ID is created by the route reflector and is the router-id (RID) of the originator of a route. If an RR sees an update with it's own RID the route is ignored.</p>
+</li>
+<li>
+<p>The CLUSTER_LIST is 4-octet number given to every cluster. When routes are reflected it is prepended with a cluster id just as an AS_PATH. If a RR sees its own cluster id in on the prefix it is dropped.</p>
+</li>
+</ul>
+<h2 id="confederations">Confederations<a class="headerlink" href="#confederations" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>Confederations can help segment your AS into smaller sections. A confederation allows you to have sub-autonomous systems known as "member autonomous systems". A confederation receives an identifer called a confederation ID. This is what is actually spread to external AS systems - not the internal sub member AS numbers.</p>
+</li>
+<li>
+<p>There are two AS_PATH attributes added to confederations. They are called AS_CONFED_SEQUENCE and AS_CONFED_SET.</p>
+<ul>
+<li>AS_CONFED_SEQUENCE - Contains an ordered list of AS numbers along the path to the destination. These would be the internal sub member AS numbers.</li>
+<li>AS_CONFED_SET - Contains an unordered list of AS numbers along the path to the destination. These would be the internal sub member AS numbers.</li>
+</ul>
+</li>
+<li>
+<p>From the view of external numbers a confederation is just one AS system. They do not see the internal AS numbers of the confederationl. eBGP routes external to the confederation are preffered over eBGP routes to member AS systems, which is preffered over iBGP routes.</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="2022-02-02-ibgp.html"
+                title="Internal BGP - iBGP">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="2022-02-06-ospf-neighbor-states.html"
+                title="OSPF Neighbor States"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-02-23 21:14:46.534740+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    ../.. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../../js/highlight.min.js"></script>
+  <script src="../../js/languages/groovy.min.js"></script>
+  <script src="../../js/languages/asciidoc.min.js"></script>
+  <script src="../../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>

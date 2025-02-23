@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>DDoS Attacks - unknown-networks</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+    <link rel="canonical" href="https://unknown-networks.com/security/Network-Security/2022-04-20-netsec-ddos-attacks.html" />
+  
+
+  <!-- Page author -->
+  
+    <meta name="author" content="dta314" />
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="../../css/colors.css">
+  <link rel="stylesheet" href="../../css/bundle.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo">
+        <img alt="KPN Logo" src="../../img/logo-kpn.svg" />
+      </a>
+      <div class="top-bar__title">unknown-networks</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">unknown-networks</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../welcome.html" class="side-bar__link ">
+    Welcome
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Networking
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      General
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/General/2022-02-15-all-about-arp.html" class="side-bar__link ">
+    All About ARP
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/General/2022-02-26-planes-data-control-management.html" class="side-bar__link ">
+    Planes: Control, Data, Management
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/General/2022-02-28-stp.html" class="side-bar__link ">
+    STP: Spanning Tree Protocol 8012.1D
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Routing
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/Routing/2022-01-27-bgp-states.html" class="side-bar__link ">
+    BGP States
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/Routing/2022-01-31-bgp-path-attributes.html" class="side-bar__link ">
+    BGP Path Attributes
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/Routing/2022-02-02-ibgp.html" class="side-bar__link ">
+    Internal BGP - iBGP
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/Routing/2022-02-04-route-reflectors-confederations.html" class="side-bar__link ">
+    Route Reflectors And Confederations
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/Routing/2022-02-06-ospf-neighbor-states.html" class="side-bar__link ">
+    OSPF Neighbor States
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/Routing/2022-02-18-ospf-loop-prevention.html" class="side-bar__link ">
+    OSPF Loop Prevention
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/Routing/2022-02-24-bgp-nwlla-omni.html" class="side-bar__link ">
+    BGP - N WLLA OMNI
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/Routing/2022-03-01-routing-loops-prev.html" class="side-bar__link ">
+    Split Horizon/Posion Reverse/Route Poisoning
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      TCP IP
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/TCP-IP/2022-01-20-tcp-the-handshake.html" class="side-bar__link ">
+    TCP - The Handshake
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/TCP-IP/2022-01-30-tcp-halfclose-halfopen.html" class="side-bar__link ">
+    TCP - Half-Close And Half-Open
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../networking/TCP-IP/2022-02-07-tcp-window.html" class="side-bar__link ">
+    The TCP Window
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      Security
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      General
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-04-10-how-tls-works.html" class="side-bar__link ">
+    How TLS Works
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      Network Security
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-04-18-netsec-vlan-hopping.html" class="side-bar__link ">
+    VLAN Hopping
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-04-19-netsec-arp-spoofing.html" class="side-bar__link ">
+    ARP Spoofing
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-04-20-netsec-ddos-attacks.html" class="side-bar__link side-bar__link--active">
+    DDoS Attacks
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-04-25-netsec-dns-spoofing.html" class="side-bar__link ">
+    DNS Spoofing
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title">DDoS Attacks</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#what-is-a-ddos-attack">What is a DDoS Attack?</a></li>
+                
+            
+                <li><a class="a" href="#types-of-ddos-attacks">Types of DDoS Attacks</a></li>
+                
+            
+                <li><a class="a" href="#mitigation-techniques">Mitigation Techniques</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="ddos-attacks"><strong>DDoS Attacks</strong><a class="headerlink" href="#ddos-attacks" title="Permanent link">#</a></h1>
+<p>Happy 4/20 =]! Today we will be talking about a commonly heard network attack, DDoS attacks. Here we will discuss the different types of DDoS attacks, how they work and different ways we can possibly mitigate them. I still remember the DDoS attack that took down the Playstation Network for a couple days during a holiday. No more chatting lets dive in!</p>
+<h2 id="what-is-a-ddos-attack">What is a DDoS Attack?<a class="headerlink" href="#what-is-a-ddos-attack" title="Permanent link">#</a></h2>
+<p>A Distributed Denial of Service (DDoS) attack is a malicious network attack whose goal is to stop or interrupt an online application or service by overloading it's system. DDoS attacks are calculated and usualy come from multiple compromised hosts called a Bot Army. Each device is used to flood a service with a specific type of traffic. DDoS attacks can be split into 3 different category types:
+    - Volume Based Attacks
+        - This attacks goal is to saturate the bandwidth of an attacked site.
+        - UDP Floods, ICMP Floods and spoof-based attackeds are Volume attacks.
+        - Measured in Bps (Bits per second)
+    - Protocol Attacks
+        - Protocol based attacks aim to consume up a victims resources.
+        - SYN Flood, Ping of Death, Smurf DDoS are Protocol Attacks.
+        - Measured in Pps (Packets per second)
+    - Application Layer Attacks
+        - Application Layer attacks aim to crash the web server
+        - GET/POST Floods and typically attack Nginx, Apache, Windows, Linux based vulenerabilities.
+        - Measuered in Rps (Requests per second)</p>
+<h2 id="types-of-ddos-attacks">Types of DDoS Attacks<a class="headerlink" href="#types-of-ddos-attacks" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>UDP Flood</p>
+<ul>
+<li>Floods a target with UDP packets on random ports on a host. This forces the host constantly check the application for the connection and when it doesnt find an active session it will respond with an ICMP ‘Destination Unreachable’ packet. This drains the resources of the target host.</li>
+</ul>
+</li>
+<li>
+<p>SYN Flood</p>
+<ul>
+<li>Floods a target with TCP SYN requests packets. This causes the host to respond with a SYN-ACK packet. The target ends ups waiting forever for an ACK from the attacker causing resources to be tied up until no new connections can be made.</li>
+</ul>
+</li>
+<li>
+<p>HTTP Flood</p>
+<ul>
+<li>Floods a target with GET or POST HTTP requests. These look legit so it is hard for a target host to determine what is legit or not. The goal is take utilize the resources on a host.</li>
+</ul>
+</li>
+<li>
+<p>ICMP Flood</p>
+<ul>
+<li>Overwhelms a target with ICMP Echo Request (ping) packets. The target host will attempt to reply to the attacker with ICMP Reply packets causing exhaustion of bandwidth and internal resources.</li>
+</ul>
+</li>
+<li>
+<p>Ping of Death (POD)</p>
+<ul>
+<li>The max size of an IP packet is 65,535 bytes. The data-link layer typically has a max frame size of 1500 bytes. This means a large IP packet has to be broken down into multiple fragments and then reassembled by the target host. If a host attempts to reassemble a packet larger than 65,535 bytes mememory buffer overflow errors can occur.</li>
+</ul>
+</li>
+<li>
+<p>Slowloris</p>
+<ul>
+<li>Allows a single computer to take down a webhost. Slowloris works by opening multiple connections to a web server and keeping them open as long as possible. Slowloris sends multiple HTTP headers for each request and never looks to complete the request. Eventually the connection pool on a host is filled and the target host can no longer accept new connections. Slowloris as the name states is meant to be a slow working attack.</li>
+</ul>
+</li>
+<li>
+<p>NTP Amplification</p>
+<ul>
+<li>An attacker will exploit a public NTP server and overhelm a victim host with UDP traffic. The amplification is due the fact that a compromised NTP host can easily send a very high amount of UDP traffic resulting in a high bandwidth &amp; high volume attack.</li>
+</ul>
+</li>
+<li>
+<p>Smurf DDoS</p>
+<ul>
+<li>An attacker spoofs an IP address and sends an ICMP request to a victim. The victim will send a ICMP reply to which the attacker will echo the response back to the victim. This creates an infinite loop and eventually crashes the system.</li>
+</ul>
+</li>
+</ul>
+<h2 id="mitigation-techniques">Mitigation Techniques<a class="headerlink" href="#mitigation-techniques" title="Permanent link">#</a></h2>
+<p>There are many ways to mitigate a DDoS attack. Even more than listed here. I believe a good combination of a few in conjuction will help round out your networks defense to a DDoS attack.</p>
+<ul>
+<li>Anycast Network<ul>
+<li>Anycast allows different servers to share the same IP address. BGP allows hosts to find the best route to the nearest anycast address. Anycast networks allows network traffic to be spread out. A DDoS attack would have to take down every server in the anycast network.</li>
+</ul>
+</li>
+<li>Firewall &amp; Network Monitoring<ul>
+<li>Configure firewall to protect against flood attacks. Monitor traffic so you can keep traffic of patterns and determine when an attack is possible.</li>
+</ul>
+</li>
+<li>Cloud Multi Region Hosted Application<ul>
+<li>Have an application configured to work in different physical regions this way the blast radius would be large for a DDoS attack.</li>
+</ul>
+</li>
+<li>Utilize BGP with an ISP<ul>
+<li>Work with an ISP to route traffic away when a DDoS attack is detected.</li>
+</ul>
+</li>
+<li>Upstream filtering<ul>
+<li>Cloudflare or Amazon Shield work by checking incoming packet IPs against known attackers and BotNets and attempt to only forward legitimate traffic.</li>
+<li>Stops the attack before it reaches your network.</li>
+</ul>
+</li>
+<li>CDN Network<ul>
+<li>Avoids a single point of congestion by having multiple PoPs.</li>
+<li>Distributes content across the globe or regions.</li>
+</ul>
+</li>
+<li>Anti DDoS Systems<ul>
+<li>Arbor Networks, Akamai, CloudFlare, Radware</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="2022-04-19-netsec-arp-spoofing.html"
+                title="ARP Spoofing">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="2022-04-25-netsec-dns-spoofing.html"
+                title="DNS Spoofing"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-02-23 21:14:46.546858+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    ../.. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../../js/highlight.min.js"></script>
+  <script src="../../js/languages/groovy.min.js"></script>
+  <script src="../../js/languages/asciidoc.min.js"></script>
+  <script src="../../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>

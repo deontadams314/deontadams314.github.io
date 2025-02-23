@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>TCP - The Handshake - unknown-networks</title>
+
+  <!-- Page description -->
+  
+
+  <!-- Redirect -->
+  
+    <link rel="canonical" href="https://unknown-networks.com/networking/TCP-IP/2022-01-20-tcp-the-handshake.html" />
+  
+
+  <!-- Page author -->
+  
+    <meta name="author" content="dta314" />
+  
+  <!--
+    Just add a favicon.ico image to the docs.
+  -->
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  <link rel="stylesheet" href="../../css/colors.css">
+  <link rel="stylesheet" href="../../css/bundle.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link media="print" onload="this.media='all'" rel="stylesheet" href="../../css/atom-dark-one.min.css">
+  <!--
+    extra_ess contains paths to CSS files in the users
+    documentation directory or a list of CSS files defined in
+    their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_css
+  -->
+  
+
+  
+  
+
+  <!--
+    Include Google Analytics tracking code.
+
+    http://www.mkdocs.org/user-guide/configuration/#google_analytics
+  -->
+  
+
+</head>
+
+<body>
+<input id="dark-mode" type="checkbox" />
+<!--
+  The JS has to be loaded here for maximum performance, right after the #dark-mode
+-->
+<script src="../../js/theme.js"></script>
+<div class="app-body">
+  <!-- KPN STYLE Beginning -->
+  <div class="app-layout ">
+    <!-- Top Bar -->
+    <nav class="app-layout__top-bar top-bar">
+      <a class="top-bar__logo">
+        <img alt="KPN Logo" src="../../img/logo-kpn.svg" />
+      </a>
+      <div class="top-bar__title">unknown-networks</div>
+      <ul class="top-bar__menu">
+        <!--
+          Create a search form that sends the user to the search.html file - this is
+          the other file in the template which adds search to the theme. The only
+          requirement here is that there is a text input with the name 'q' and the
+          action and methods match below.
+        -->
+          <li class="top-bar__item">
+
+            <span role="search" id="search-input-wrapper">
+              <form action="../../search.html" method="get">
+                <input type="text" class="input" id="search-input" name="q" placeholder="Search..." />
+              </form>
+            </span >
+          </li>
+        <!--
+          Versioning support
+        -->
+        
+        <!--
+          Support repo URL
+        -->
+        <li class="top-bar__item">
+          
+        </li>
+
+        <li class="top-bar__item">
+            <label class="top-bar__link" id="label-dark-mode" for="dark-mode" title="Dark mode">
+              <svg alt="dark mode" width="24" height="24">
+                <image xlink:href="../../img/ui-bulb.svg" width="24" height="24"/>
+            </svg>
+            </label>
+        </li>
+        <li class="top-bar__item top-bar__item--trigger"></li>
+
+        <!-- <li class="top-bar__item">
+
+          <a class="top-bar__link top-bar__link--active">Home</a>
+        </li>
+        <li class="top-bar__item"><a class="top-bar__link">Information</a></li>
+        <li class="top-bar__item">
+          <a class="top-bar__link top-bar__link--collapsed">Getting Started</a>
+
+        </li>
+        <li class="top-bar__item top-bar__item--trigger">Menu</li> -->
+      </ul>
+    </nav>
+
+    <!--
+      Create the navigation for the documentation.
+
+      Because we don't know how many levels deep the navigation is, it needs to
+      be included in it's own file so it can be recursive. Otherwise the theme
+      can also only support a specific number of levels.
+
+      See the nav.html file for more details about how this works.
+    -->
+    <nav class="app-layout__side-bar side-bar">
+      <div class="side-bar__action-bar">
+        <a class="side-bar__link" href="/">unknown-networks</a>
+        <!--
+          Versioning support
+        -->
+        
+        <button class="side-bar__close"></button>
+      </div>
+      <ul class="side-bar__menu">
+        
+          <!--
+
+-->
+
+<li>
+  <a href="../../welcome.html" class="side-bar__link ">
+    Welcome
+  </a>
+</li>
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      Networking
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      General
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-02-15-all-about-arp.html" class="side-bar__link ">
+    All About ARP
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-02-26-planes-data-control-management.html" class="side-bar__link ">
+    Planes: Control, Data, Management
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../General/2022-02-28-stp.html" class="side-bar__link ">
+    STP: Spanning Tree Protocol 8012.1D
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Routing
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Routing/2022-01-27-bgp-states.html" class="side-bar__link ">
+    BGP States
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Routing/2022-01-31-bgp-path-attributes.html" class="side-bar__link ">
+    BGP Path Attributes
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Routing/2022-02-02-ibgp.html" class="side-bar__link ">
+    Internal BGP - iBGP
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Routing/2022-02-04-route-reflectors-confederations.html" class="side-bar__link ">
+    Route Reflectors And Confederations
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Routing/2022-02-06-ospf-neighbor-states.html" class="side-bar__link ">
+    OSPF Neighbor States
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Routing/2022-02-18-ospf-loop-prevention.html" class="side-bar__link ">
+    OSPF Loop Prevention
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Routing/2022-02-24-bgp-nwlla-omni.html" class="side-bar__link ">
+    BGP - N WLLA OMNI
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../Routing/2022-03-01-routing-loops-prev.html" class="side-bar__link ">
+    Split Horizon/Posion Reverse/Route Poisoning
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--expanded side-bar__link--active">
+      TCP IP
+    </span>
+    <ul class="side-bar__sub-menu side-bar__sub-menu--visible">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-01-20-tcp-the-handshake.html" class="side-bar__link side-bar__link--active">
+    TCP - The Handshake
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-01-30-tcp-halfclose-halfopen.html" class="side-bar__link ">
+    TCP - Half-Close And Half-Open
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="2022-02-07-tcp-window.html" class="side-bar__link ">
+    The TCP Window
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+          <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Security
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      General
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/General/2022-04-10-how-tls-works.html" class="side-bar__link ">
+    How TLS Works
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            <!--
+
+-->
+
+  <li>
+    <span class="side-bar__link side-bar__link--collapsed">
+      Network Security
+    </span>
+    <ul class="side-bar__sub-menu ">
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-18-netsec-vlan-hopping.html" class="side-bar__link ">
+    VLAN Hopping
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-19-netsec-arp-spoofing.html" class="side-bar__link ">
+    ARP Spoofing
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-20-netsec-ddos-attacks.html" class="side-bar__link ">
+    DDoS Attacks
+  </a>
+</li>
+
+        
+            <!--
+
+-->
+
+<li>
+  <a href="../../security/Network-Security/2022-04-25-netsec-dns-spoofing.html" class="side-bar__link ">
+    DNS Spoofing
+  </a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+      </ul>
+    </nav>
+
+    <!-- MAIN BLOCK -->
+    <main class="app-layout__main main">
+      <div class="app-layout__title-bar title-bar">
+        <div class="title-bar__title">TCP - The Handshake</div>
+      </div>
+      
+      <div class="sidebar--secondary hidden-s hidden-xs">
+        <h4>Table of contents</h4>
+        <ul>
+        
+          
+            
+                <li><a class="a" href="#how-is-a-connection-established">How Is A Connection Established?</a></li>
+                
+            
+                <li><a class="a" href="#how-is-a-connection-terminated">How Is A Connection Terminated?</a></li>
+                
+            
+          
+        
+        </ul>
+      </div>
+      
+      <div class="container content-block">
+        <div class="kpn-style">
+          <div class="card">
+            <div class="card__body">
+
+              
+              <h1 id="tcp-the-handshake"><strong>TCP - The Handshake</strong><a class="headerlink" href="#tcp-the-handshake" title="Permanent link">#</a></h1>
+<p>You must crawl before you walk! Lets start with the basics and review everyone's favorite greeting - the 3 way handsake.</p>
+<h2 id="how-is-a-connection-established">How Is A Connection Established?<a class="headerlink" href="#how-is-a-connection-established" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>The sending side (known as the client) will send a SYN segment with the port number they want to connect to on the receiver (known as the server). This segment will also include the inital sequence number (ISN) of the client.</p>
+</li>
+<li>
+<p>The server will respond with a SYN that will include an ISN of it's own as well. The server will also acknowledge the clients SYN by sending an ACK segment with an ISN of the client plus one. A SYN will always consume one sequence number.</p>
+</li>
+<li>
+<p>The client will acknowledge the server's SYN with an ACK segment - again this will be equal to the clients SYN ISN plus one.</p>
+</li>
+<li>
+<p>The side that sends the first SYN is known to perform an <em>active open</em>. The receiver of the SYN that sends the next SYN performs a <em>passive open</em>.</p>
+</li>
+</ul>
+<p><img alt="tcp.png" src="/assets/images/tcp.png" /></p>
+<h2 id="how-is-a-connection-terminated">How Is A Connection Terminated?<a class="headerlink" href="#how-is-a-connection-terminated" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>Because a TCP connection is full-duplex each side must shut down independently. Usually the client will initate the closing of a TCP connection but the server can close as well. In total 4 segments are needed to close a connection.</p>
+</li>
+<li>
+<p>A connection can still be open in one direction and be closed in the other. This is known as a <strong><em>TCP half-close</em></strong>. This is basically saying <em>"Hey I would like to close my end of the connection - here is a FIN. But please still send data until I receive a FIN from the other side"</em>.</p>
+</li>
+<li>
+<p>A FIN will be sent by the side that wants to close their side of the session. This FIN will contain a sequence number of the current session. The receiver of this FIN will respond with an ACK of the sequence number plus one. A FIN consumes a sequence number just like SYN. At this point the other side will send a FIN segment to which the receiver must ACK to close the session on both ends.</p>
+</li>
+<li>
+<p>The side that sends the first FIN performs and <em>active close</em>. The side that receives that FIN performs a <em>passive close</em>.</p>
+<p><img alt="FIN.png" src="/assets/images/FIN.png" /></p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__body">
+        
+        <div class="row">
+          <div class="col col--s-4 col--m-3 col--l-2">
+          </div>
+          <div class="col col--s-4 col--m space-between">
+            
+              <a class="footer__link padding-top-0 navigation-prev"
+                href="../Routing/2022-03-01-routing-loops-prev.html"
+                title="Split Horizon/Posion Reverse/Route Poisoning">
+                &#8592; Previous Page
+              </a>
+            
+            
+            
+              <a class="footer__link padding-top-0 navigation-next"
+                href="2022-01-30-tcp-halfclose-halfopen.html"
+                title="TCP - Half-Close And Half-Open"/>
+                Next Page &#8594;
+              </a>
+            
+          </div>
+          <div class="col col--s-4 col--m-3 ">
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+  </div>
+
+
+  <!--
+  MkDocs version      : 1.6.1
+  Docs Build Date UTC : 2025-02-23 21:14:46.540663+00:00
+  -->
+
+  <!--
+    To include static assets from our theme, just add
+    ../.. beforehand which will be the relative path to
+    the root of the documentation.
+  -->
+  <script src="../../js/highlight.min.js"></script>
+  <script src="../../js/languages/groovy.min.js"></script>
+  <script src="../../js/languages/asciidoc.min.js"></script>
+  <script src="../../js/languages/nix.min.js"></script>
+
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script async src="../../js/detail.js"></script>
+  <!--
+    extra_javascript contains paths to JavaScript files in the
+    users documentation directory or a list of JavaScript files
+    defined in their mkdocs.yml.
+
+    http://www.mkdocs.org/user-guide/configuration/#extra_javascript
+  -->
+  
+    <script src="../../search/main.js"></script>
+  
+
+
+  <script>
+  function getMermaidTheme() {
+    if (document.getElementById("dark-mode").checked) {
+      return 'dark'
+    }
+    return 'forest'
+  }
+
+  function initMermaid() {
+    mermaid.initialize({
+      theme: getMermaidTheme(),
+      logLevel: 1,
+    });
+  }
+  var mermaidClass = document.getElementsByClassName('mermaid');
+  if (mermaidClass.length > 0) {
+
+    var mermaidScript = document.createElement('script');
+    mermaidScript.setAttribute("src", "../../js/mermaid.min.js");
+    mermaidScript.setAttribute("async", "false");
+    mermaidScript.setAttribute("type", "text/javascript");
+    mermaidScript.onload = initMermaid;
+    document.body.appendChild(mermaidScript)
+
+  }
+  </script>
+
+</div>
+</body>
+</html>
