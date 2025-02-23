@@ -8,9 +8,3 @@ I will be mainly discusing networkeng, cloud, code (python) & security related t
 
 Feel free to reach via social media and I hope you enjoy the content!
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.

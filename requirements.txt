@@ -3,4 +3,4 @@ mkdocs-dracula-theme==1.0.7
 mkdocs-get-deps==0.2.0
 pymdown-extensions==10.14.3
 mkdocs-blog-plugin
-mkdocs-rss-plugin 
+mkdocs-rss-plugin
