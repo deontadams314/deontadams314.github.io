@@ -18,7 +18,7 @@ Today we will take a look at Transport Layer Security better known as its acrony
         - Compression Method: The method used for compressing the TLS packets to increase speed and lower bandwidth usage.
         - Extensions: Extra TLS parameters that may be requested by the client.
 
-        ![tls-client-hello.png]({{site.baseurl}}/assets/images/tls-client-hello.png)
+        ![tls-client-hello.png](/assets/images/tls-client-hello.png)
 
     2. Server Hello Message: Response to the client hello message containg selected parameters from the client.
         - TLS Version: The server selects a TLS version
