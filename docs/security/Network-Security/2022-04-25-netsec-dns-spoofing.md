@@ -6,19 +6,20 @@ Todays topic DNS spoofing! I hope you all enjoy this one.
 
 A Distributed Denial of Service (DDoS) attack is a malicious network attack whose goal is to stop or interrupt an online application or service by overloading it's system. DDoS attacks are calculated and usualy come from multiple compromised hosts called a Bot Army. Each device is used to flood a service with a specific type of traffic. DDoS attacks can be split into 3 different category types:
 
-- Volume Based Attacks
-     - This attacks goal is to saturate the bandwidth of an attacked site.
-      - UDP Floods, ICMP Floods and spoof-based attackeds are Volume attacks.
-       - Measured in Bps (Bits per second)
-- Protocol Attacks
-     - Protocol based attacks aim to consume up a victims resources.
-      - SYN Flood, Ping of Death, Smurf DDoS are Protocol Attacks.
-       - Measured in Pps (Packets per second)
-- Application Layer Attacks
-     - Application Layer attacks aim to crash the web server
-     - GET/POST Floods and typically attack Nginx, Apache, Windows, Linux based vulenerabilities.
-     - Measuered in Rps (Requests per second)
+### Volume Based Attacks
+- This attacks goal is to saturate the bandwidth of an attacked site.
+- UDP Floods, ICMP Floods and spoof-based attackeds are Volume attacks.
+- Measured in Bps (Bits per second)
 
+###  Protocol Attacks
+ - Protocol based attacks aim to consume up a victims resources.
+ - SYN Flood, Ping of Death, Smurf DDoS are Protocol Attacks.
+ - Measured in Pps (Packets per second)
+
+### Application Layer Attacks
+ - Application Layer attacks aim to crash the web server
+ - GET/POST Floods and typically attack Nginx, Apache, Windows, Linux based vulenerabilities.
+ - Measuered in Rps (Requests per second)
 
 ## Types of DDoS Attacks
 
